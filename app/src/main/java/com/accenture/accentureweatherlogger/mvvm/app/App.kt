@@ -5,17 +5,17 @@ import android.app.Application
 import com.accenture.accentureweatherlogger.mvvm.di.base.AppInjector
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
+import dagger.android.HasAndroidInjector
 import javax.inject.Inject
 
 /**
  * Created by Waheed on 04,November,2019
  */
 
-class App : Application(), HasActivityInjector {
+class App : Application(), HasAndroidInjector  {
 
     @Inject
-    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
 
     override fun onCreate() {
         super.onCreate()
@@ -23,7 +23,8 @@ class App : Application(), HasActivityInjector {
         AppInjector.init(this)
     }
 
-    override fun activityInjector(): AndroidInjector<Activity> {
+
+    override fun androidInjector(): AndroidInjector<Any> {
         return dispatchingAndroidInjector
     }
 }

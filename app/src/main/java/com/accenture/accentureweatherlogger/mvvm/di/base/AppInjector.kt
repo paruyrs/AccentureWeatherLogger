@@ -9,8 +9,8 @@ import androidx.fragment.app.FragmentManager
 import com.accenture.accentureweatherlogger.mvvm.app.App
 import com.accenture.accentureweatherlogger.mvvm.di.components.DaggerAppComponent
 import dagger.android.AndroidInjection
+import dagger.android.HasAndroidInjector
 import dagger.android.support.AndroidSupportInjection
-import dagger.android.support.HasSupportFragmentInjector
 
 
 /**
@@ -46,7 +46,7 @@ object AppInjector {
     }
 
     private fun handleActivity(activity: Activity) {
-        if (activity is HasSupportFragmentInjector) {
+        if (activity is HasAndroidInjector) {
             AndroidInjection.inject(activity)
         }
         (activity as? FragmentActivity)?.supportFragmentManager?.registerFragmentLifecycleCallbacks(
@@ -56,7 +56,7 @@ object AppInjector {
                     f: Fragment,
                     savedInstanceState: Bundle?
                 ) {
-                    if (f is com.accenture.accentureweatherlogger.mvvm.di.base.Injectable) {
+                    if (f is Injectable) {
                         AndroidSupportInjection.inject(f)
                     }
                 }
