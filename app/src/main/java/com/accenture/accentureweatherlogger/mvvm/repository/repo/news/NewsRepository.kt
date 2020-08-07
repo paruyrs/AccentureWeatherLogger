@@ -40,7 +40,7 @@ class NewsRepository @Inject constructor(
 
         val data = HashMap<String, String>()
         data.put("country", countryShortKey)
-        data.put("apiKey", BuildConfig.NEWS_API_KEY)
+        data.put("apiKey", BuildConfig.WEATHER_API_KEY)
 
         return object : NetworkAndDBBoundResource<List<NewsArticles>, NewsSource>(appExecutors) {
             override fun saveCallResult(item: NewsSource) {
@@ -70,8 +70,8 @@ class NewsRepository @Inject constructor(
             LiveData<Resource<NewsSource>> {
 
         val data = HashMap<String, String>()
-        data.put("country", countryShortKey)
-        data.put("apiKey", BuildConfig.NEWS_API_KEY)
+        data["country"] = countryShortKey
+        data["apiKey"] = BuildConfig.WEATHER_API_KEY
 
         return object : NetworkResource<NewsSource>() {
             override fun createCall(): LiveData<Resource<NewsSource>> {
