@@ -10,6 +10,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 import retrofit2.http.QueryMap
 import android.R.string.no
+import com.accenture.accentureweatherlogger.mvvm.repository.model.weather.WeatherSource
 
 
 /**
@@ -29,12 +30,17 @@ interface ApiServices {
     @GET("top-headlines")
     fun getNewsSource(@QueryMap options: Map<String, String>): LiveData<Resource<NewsSource>>
 
+    @GET("top-headlines")
+    fun getWeatherSource(@QueryMap options: Map<String, String>): LiveData<Resource<WeatherSource>>
+
+
+
 
     /**
      * Fetch news articles from Google news using GET API Call on given Url
      * Using Call, By Retrofit
      */
     @GET("top-headlines?sources=google-news&apiKey=" + BuildConfig.WEATHER_API_KEY)
-    fun getNewsSourceUsingCall(): Call<NewsSource>
+    fun getWeatherSourceUsingCall(): Call<WeatherSource>
 
 }

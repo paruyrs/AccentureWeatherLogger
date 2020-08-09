@@ -11,4 +11,6 @@
 
     <!-- Empty -->
     <string name="no_news">No News</string>
+    <string name="get_weather">Get Weather</string>
+    <string name="degree_celsius_symbol">°C</string>
 </resources>

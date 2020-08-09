@@ -1,7 +1,9 @@
 package com.accenture.accentureweatherlogger.mvvm.repository.model.weather
 
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "main_table")
 data class Main(
     @SerializedName("temp")
     val temp: Double = 0.0,
