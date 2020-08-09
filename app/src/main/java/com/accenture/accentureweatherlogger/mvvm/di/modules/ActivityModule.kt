@@ -2,6 +2,7 @@ package com.accenture.accentureweatherlogger.mvvm.di.modules
 
 import com.accenture.accentureweatherlogger.mvvm.ui.countries.CountryListingActivity
 import com.accenture.accentureweatherlogger.mvvm.ui.news.NewsArticlesActivity
+import com.accenture.accentureweatherlogger.mvvm.ui.weather.WeatherActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -23,4 +24,7 @@ abstract class ActivityModule {
 
     @ContributesAndroidInjector
     abstract fun contributeCountryListingActivity(): CountryListingActivity
+
+    @ContributesAndroidInjector
+    abstract fun contributeWeatherActivity(): WeatherActivity
 }

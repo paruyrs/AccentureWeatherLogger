@@ -10,6 +10,7 @@ import com.accenture.accentureweatherlogger.mvvm.repository.api.network.LiveData
 import com.accenture.accentureweatherlogger.mvvm.repository.db.AppDatabase
 import com.accenture.accentureweatherlogger.mvvm.repository.db.countries.CountriesDao
 import com.accenture.accentureweatherlogger.mvvm.repository.db.news.NewsArticlesDao
+import com.accenture.accentureweatherlogger.mvvm.repository.db.weather.WeatherDao
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -52,7 +53,7 @@ class AppModule {
     @Singleton
     @Provides
     fun provideDb(context: Context): AppDatabase {
-        return Room.databaseBuilder(context, AppDatabase::class.java, "news-db").build()
+        return Room.databaseBuilder(context, AppDatabase::class.java, "weather-db").build()
     }
 
 
@@ -72,6 +73,15 @@ class AppModule {
     @Provides
     fun provideCountriesDao(db: AppDatabase): CountriesDao {
         return db.countriesDao()
+    }
+
+    /**
+     * Provides WeatherDao an object to access Weather table from Database
+     */
+    @Singleton
+    @Provides
+    fun provideWeatherDao(db: AppDatabase): WeatherDao {
+        return db.weatherDao()
     }
 
 

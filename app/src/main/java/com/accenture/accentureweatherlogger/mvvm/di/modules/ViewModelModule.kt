@@ -34,6 +34,8 @@ abstract class ViewModelModule {
     @ViewModelKey(CountriesViewModel::class)
     abstract fun bindCountriesViewModel(countriesViewModel: CountriesViewModel): ViewModel
 
+
+
     /**
      * Binds ViewModels factory to provide ViewModels.
      */
