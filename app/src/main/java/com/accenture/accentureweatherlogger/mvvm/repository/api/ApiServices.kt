@@ -30,7 +30,7 @@ interface ApiServices {
     @GET("top-headlines")
     fun getNewsSource(@QueryMap options: Map<String, String>): LiveData<Resource<NewsSource>>
 
-    @GET("top-headlines")
+    @GET("weather")
     fun getWeatherSource(@QueryMap options: Map<String, String>): LiveData<Resource<WeatherSource>>
 
 

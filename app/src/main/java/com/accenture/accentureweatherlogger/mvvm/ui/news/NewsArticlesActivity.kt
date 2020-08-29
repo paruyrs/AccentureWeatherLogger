@@ -10,7 +10,7 @@ import com.accenture.accentureweatherlogger.mvvm.utils.extensions.load
 import com.accenture.accentureweatherlogger.mvvm.utils.extensions.observe
 import com.accenture.accentureweatherlogger.mvvm.utils.extensions.toast
 import kotlinx.android.synthetic.main.activity_news_articles.*
-import kotlinx.android.synthetic.main.empty_layout_news_article.*
+//import kotlinx.android.synthetic.main.empty_layout_news_article.*
 import kotlinx.android.synthetic.main.progress_layout_news_article.*
 
 /**
@@ -41,7 +41,7 @@ class NewsArticlesActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news_articles)
 
-        news_list.setEmptyView(empty_view)
+       // news_list.setEmptyView(empty_view)
         news_list.setProgressView(progress_view)
 
         adapter = NewsArticlesAdapter {

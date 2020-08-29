@@ -27,7 +27,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/iv_country_image"
-            android:background="@color/countryNameBackgroundLight"
             android:gravity="center_horizontal"
             android:inputType="textCapWords"
             android:maxLines="1"

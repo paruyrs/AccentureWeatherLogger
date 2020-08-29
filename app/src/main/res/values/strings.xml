@@ -1,8 +1,8 @@
 <resources>
     <!-- App details -->
-    <string name="app_name">News</string>
+    <string name="app_name">Accenture Weather Logger</string>
     <string name="countries">Countries</string>
-    <string name="news">News</string>
+    <string name="weather">Weather</string>
 
     <!-- Content Description -->
     <string name="news_image_desc">News Image</string>

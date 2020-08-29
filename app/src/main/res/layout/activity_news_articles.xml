@@ -21,8 +21,8 @@
         layout="@layout/progress_layout_news_article"
         tools:visibility="visible" />
 
-    <include
-        layout="@layout/empty_layout_news_article"
-        tools:visibility="invisible" />
+<!--    <include-->
+<!--        layout="@layout/empty_layout_news_article"-->
+<!--        tools:visibility="invisible" />-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

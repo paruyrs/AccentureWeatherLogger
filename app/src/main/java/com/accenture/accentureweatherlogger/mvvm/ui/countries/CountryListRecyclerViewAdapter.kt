@@ -14,7 +14,6 @@ import com.bumptech.glide.request.RequestOptions
 import com.accenture.accentureweatherlogger.mvvm.R
 import com.accenture.accentureweatherlogger.mvvm.repository.model.countries.Country
 import com.accenture.accentureweatherlogger.mvvm.ui.countries.CountryListFragment.OnCountriesListClickListener
-import kotlinx.android.synthetic.main.row_country_list.view.*
 
 /**
  * [RecyclerView.Adapter] that can display a [Country] and makes a call to the
@@ -37,15 +36,21 @@ class CountryListRecyclerViewAdapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    /*override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.row_country_list, parent, false)
+        return ViewHolder(view)
+    }*/
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        TODO("Not yet implemented")
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.activity_countires, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val country = mValues[position]
-        holder.tv_country_name.text = country.displayName
+       // holder.tv_country_name.text = country.displayName
 
         Glide.with(holder.mView.context)
             .load(Uri.parse(country.countryFagUrl))
@@ -56,7 +61,7 @@ class CountryListRecyclerViewAdapter(
                     .centerCrop()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
             )
-            .into(holder.iv_country_image)
+           // .into(holder.iv_country_image)
 
         with(holder.mView) {
             tag = country
@@ -67,11 +72,11 @@ class CountryListRecyclerViewAdapter(
     override fun getItemCount(): Int = mValues.size
 
     inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
-        val iv_country_image: ImageView = mView.iv_country_image
-        val tv_country_name: TextView = mView.tv_country_name
+      //  val iv_country_image: ImageView = mView.iv_country_image
+       // val tv_country_name: TextView = mView.tv_country_name
 
-        override fun toString(): String {
+      /* override fun toString(): String {
             return super.toString() + " '" + tv_country_name.text + "'"
-        }
+        }*/
     }
 }

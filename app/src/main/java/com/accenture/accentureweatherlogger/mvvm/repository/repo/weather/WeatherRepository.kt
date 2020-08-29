@@ -29,11 +29,11 @@ class WeatherRepository @Inject constructor(
      * and persist them in the database
      */
 
-    fun getWeatherInfo(countryShortKey: String): LiveData<Resource<Main?>> {
+    fun getWeatherInfo(cityShortKey: String): LiveData<Resource<Main?>> {
 
         val data = HashMap<String, String>()
-        data.put("country", countryShortKey)
-        data.put("apiKey", BuildConfig.WEATHER_API_KEY)
+        data.put("id", cityShortKey)
+        data.put("appid", BuildConfig.WEATHER_API_KEY)
 
         return object : NetworkAndDBBoundResource<Main, WeatherSource>(appExecutors) {
             override fun saveCallResult(item: WeatherSource) {
@@ -57,12 +57,12 @@ class WeatherRepository @Inject constructor(
      * and persist them in the database
      * LiveData<Resource<NewsSource>>
      */
-    fun getWeatherInfoFromServerOnly(countryShortKey: String):
+    fun getWeatherInfoFromServerOnly(cityShortKey: String):
             LiveData<Resource<WeatherSource>> {
 
         val data = HashMap<String, String>()
-        data["country"] = countryShortKey
-        data["apiKey"] = BuildConfig.WEATHER_API_KEY
+        data["id"] = cityShortKey
+        data["appid"] = BuildConfig.WEATHER_API_KEY
 
         return object : NetworkResource<WeatherSource>() {
             override fun createCall(): LiveData<Resource<WeatherSource>> {

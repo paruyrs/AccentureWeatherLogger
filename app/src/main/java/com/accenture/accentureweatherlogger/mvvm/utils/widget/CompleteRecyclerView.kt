@@ -51,7 +51,7 @@ class CompleteRecyclerView @JvmOverloads constructor(
         }
     }
 
-    override fun setAdapter(adapter: RecyclerView.Adapter<*>?) {
+    override fun setAdapter(adapter: Adapter<*>?) {
         visible()
         val oldAdapter = getAdapter()
         oldAdapter?.unregisterAdapterDataObserver(mAdapterObserver)

@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tv_date_time"
+        android:id="@+id/date_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
@@ -18,13 +18,13 @@
         tools:text="18 June, 2019 1:13 PM" />
 
     <TextView
-        android:id="@+id/tv_temperature"
+        android:id="@+id/temperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
         android:textSize="70sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_date_time"
+        app:layout_constraintTop_toBottomOf="@id/date_time"
         tools:text="33" />
 
     <TextView
@@ -33,16 +33,16 @@
         android:text="@string/degree_celsius_symbol"
         android:textColor="@color/colorPrimary"
         android:textSize="35sp"
-        app:layout_constraintStart_toEndOf="@id/tv_temperature"
-        app:layout_constraintTop_toTopOf="@id/tv_temperature" />
+        app:layout_constraintStart_toEndOf="@id/temperature"
+        app:layout_constraintTop_toTopOf="@id/temperature" />
 
     <TextView
-        android:id="@+id/tv_city_country"
+        android:id="@+id/city_country"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_temperature"
+        app:layout_constraintTop_toBottomOf="@id/temperature"
         tools:text="Dhaka, BD" />
 </androidx.constraintlayout.widget.ConstraintLayout>
